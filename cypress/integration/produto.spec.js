@@ -4,7 +4,7 @@
 describe('Funcionalidade Produto', ()=>{
 
 beforeEach(()=>{
-    cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+    cy.visit('produtos')
 });
 
     it('Deve selecionar produto da lista', ()=>{
@@ -12,7 +12,7 @@ beforeEach(()=>{
 
     });
 
-    it.only('Deve selecionar produto ao carrinho', ()=>{
+    it('Deve selecionar produto ao carrinho', ()=>{
         var qndCarrinho = 4
         
 
