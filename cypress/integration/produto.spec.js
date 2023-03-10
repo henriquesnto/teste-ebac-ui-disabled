@@ -23,10 +23,18 @@ beforeEach(()=>{
         cy.get('.button-variable-item-Blue').click()
         cy.get('.input-text').clear().type(qndCarrinho)
         cy.get('.single_add_to_cart_button').click()
-        cy.get('.dropdown-toggle > .mini-cart-items').should('contain' , qndCarrinho)
-        cy.get('.woocommerce-message')
-        .should('contain' , qndCarrinho + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
 
+        cy.get('.dropdown-toggle > .mini-cart-items').should('contain' , qndCarrinho) 
+        cy.get('.woocommerce-message').should('contain' , qndCarrinho + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
+
+    });
+
+    it('Deve adicionar produtos ao carrinho - usando comando', () => {
+        cy.addProdutos('Abominable Hoodie', 'M', 'Blue', 3)
+    });
+
+    it('Deve adicionar produtos ao carrinho - usando comando', () => {
+        cy.addProdutos('Aero Daily Fitness Tee', 'S', 'Black', 3)
     });
 
 });

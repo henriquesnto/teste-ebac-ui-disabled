@@ -20,7 +20,7 @@ context('Funcionalidade Login', () => {
         cy.get('.page-title').should('contain' , 'Minha conta')
  
 
-    })
+    });
 
     it('Deve fazer o login com sucesso - usando arquivo de dados', () =>{
 		cy.get('#username').type(perfil.usuario)
@@ -29,9 +29,9 @@ context('Funcionalidade Login', () => {
 
         cy.get('.page-title').should('contain' , 'Minha conta')
 
-    })
+    });
 
-    it.only('Deve fazer o login com sucesso - usando fixture', () =>{
+    it('Deve fazer o login com sucesso - usando fixture', () =>{
         cy.fixture('perfil').then(dados =>{
             cy.get('#username').type(perfil.usuario)
             cy.get('#password').type(perfil.senha, {log: false})
@@ -39,7 +39,7 @@ context('Funcionalidade Login', () => {
 
             cy.get('.page-title').should('contain' , 'Minha conta')
 
-        })
+        });
 
     });
 
@@ -49,7 +49,7 @@ context('Funcionalidade Login', () => {
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.woocommerce-error').should('contain' , 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
-    })
+    });
 
     it('Deve exibir uma mensagem de erro ao inserir senha inválidos', ()=> {
         cy.get('#username').type('aluno_ebac@teste.com')
@@ -57,6 +57,6 @@ context('Funcionalidade Login', () => {
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.woocommerce-error').should('contain' , 'Erro: a senha fornecida para o e-mail aluno_ebac@teste.com está incorreta. Perdeu a senha?')
-    })
+    });
 
 })

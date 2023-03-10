@@ -6,7 +6,7 @@ faker.locale = 'pt_BR';
 describe('Funcionalidade Pré Cadastro' , () => {
 
     beforeEach(() => {
-        cy.visit('minha-conta/')
+        cy.visit('minha-conta')
     });
 
 
@@ -26,4 +26,12 @@ describe('Funcionalidade Pré Cadastro' , () => {
 
         cy.get('.woocommerce-message').should('contain','Detalhes da conta modificados com sucesso.')
     });
+
+    it('Deve realizar pré cadastro com sucesso - usando comandos' , () => {
+        let emailFaker2 = faker.internet.email()
+        cy.preCadastro(emailFaker2, 'senhaForteAS' , 'luiz', 'araujo')
+
+
+    });
+
 });
