@@ -3,7 +3,7 @@
 
 describe('Funcionalidade Produto', ()=>{
 
-beforeEach(()=>{
+beforeEach(() => {
     cy.visit('produtos')
 });
 

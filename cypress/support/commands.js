@@ -47,7 +47,7 @@ Cypress.Commands.add('preCadastro', (email, senha, nome, sobrenome) => {
 })
 
 Cypress.Commands.add('addProdutos', (produto, tamanho, cor, quantidade) => {
-    cy.get('[class="product-block grid"]')
+        cy.get('[class="product-block grid"]')
         .contains(produto).click()
         cy.wait(3000)
         cy.get('.button-variable-item-' + tamanho).click()
