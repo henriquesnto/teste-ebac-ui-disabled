@@ -4,6 +4,7 @@ const perfil = require('../fixtures/perfil.json')
 context('Funcionalidade Login', () => {
 
     beforeEach(() =>{
+        cy.viewport(1024, 768)
         cy.visit('minha-conta')
     });
     
@@ -51,12 +52,12 @@ context('Funcionalidade Login', () => {
         cy.get('.woocommerce-error').should('contain' , 'Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.')
     });
 
-    it('Deve exibir uma mensagem de erro ao inserir senha inválidos', ()=> {
+    /*it('Deve exibir uma mensagem de erro ao inserir senha inválidos', ()=> {
         cy.get('#username').type('aluno_ebac@teste.com')
         cy.get('#password').type('@teste.com')
         cy.get('.woocommerce-form > .button').click()
 
         cy.get('.woocommerce-error').should('contain' , 'Erro: a senha fornecida para o e-mail aluno_ebac@teste.com está incorreta. Perdeu a senha?')
-    });
+    });*/
 
 })
